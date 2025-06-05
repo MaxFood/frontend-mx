@@ -1,66 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🍔 MAX FOOD - Frontend
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-Framework-red)
+![PHP](https://img.shields.io/badge/PHP-8%2B-blue)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> MAX FOOD é uma plataforma digital completa para pedidos de comida online, desenvolvida com foco na experiência do usuário, tanto para clientes quanto para restaurantes parceiros.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Inspirado em apps como iFood e Uber Eats, o MAX FOOD permite que usuários explorem restaurantes, façam pedidos personalizados, acompanhem o status da entrega em tempo real e realizem pagamentos de forma rápida e segura..
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Tecnologias utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **PHP 8+**
+- **Laravel** (substitua pela versão exata ex: `v10.x`)
+- **Blade** (template engine do Laravel)
+- **Laravel Mix** ou **Vite**
+- **HTML5**, **CSS3**, **JavaScript**
+- **Bootstrap** ou outro framework CSS
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📦 Instalação
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Clone o repositório e instale as dependências:
 
-### Premium Partners
+```bash
+git clone https://github.com/MaxFood/frontend-mx.git
+cd max-food
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+Rode as migrations para criar as tabelas no banco de dados:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan migrate
+```
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Configure o ambiente:
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Rode o servidor:
 
-## License
+```bash
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Acesse em: [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 🔗 Integração com o Backend
+
+Este projeto se comunica com o backend por meio de **rotas web** e/ou **API RESTful**. Certifique-se de que o backend esteja rodando corretamente e configurado para aceitar as requisições do frontend.
+
+### Configuração de URL base (se estiver usando API separada)
+
+Edite o arquivo `.env` e adicione:
+
+```env
+API_URL=http://localhost:8001/api
+```
+
+---
+
+---
+
+## 📁 Estrutura básica
+
+```
+MAX-FOOD/
+├── app/ → Código principal da aplicação (Models, Controllers, etc.)
+│ └── Http/
+│ └── Controllers/ → Controladores da aplicação
+├── bootstrap/ → Arquivo de inicialização do framework
+├── config/ → Arquivos de configuração do Laravel
+├── database/ → Migrations, seeders e factories
+│ └── migrations/ → Controle de estrutura do banco de dados
+├── public/ → Pasta pública (acesso web)
+│   ├── css/
+│   ├── fonts/
+│   └── images/
+├── resources/
+│ ├── views/ → Arquivos Blade (layouts e páginas)
+├── routes/
+│ └── web.php → Rotas da aplicação (web)
+├── .env → Arquivo de ambiente (configurações sensíveis)
+├── artisan → CLI do Laravel
+├── composer.json → Gerenciador de dependências PHP
+└── README.md → Documentação do projeto
+```
+
+

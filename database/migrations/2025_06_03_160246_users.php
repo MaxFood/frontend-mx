@@ -17,8 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('senha');
+            $table->string('cpf', 14)->unique();
+            $table->date('dataNascimento');
+            $table->string('telefone',20);
+
+        
+
+            //token
             $table->rememberToken();
             $table->timestamps();
         });

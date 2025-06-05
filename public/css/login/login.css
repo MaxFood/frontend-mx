@@ -5,7 +5,7 @@
 
 body {
     background: #0514b0;
-    background: linear-gradient(180deg,rgba(5, 20, 176, 1) 18%, rgba(237, 83, 229, 1) 82%);
+    background: linear-gradient(180deg,#004AAD 0%, #CB6CE6 89%);
     background-attachment: fixed;
     background-repeat: no-repeat;
 
@@ -25,6 +25,13 @@ body {
 
 }
 
+.container a {
+    cursor: pointer;
+    color: #ffe560;
+    text-decoration: underline;
+}
+
+
 .container h1{
     font-family: 'Colo-Pro';
     font-size: 30px;
@@ -35,6 +42,7 @@ body {
             0 0 2px rgba(255, 255, 102, 0.4),
             0 0 4px rgba(255, 255, 102, 0.2);         
 }
+
 
 .container h1 span {
     
