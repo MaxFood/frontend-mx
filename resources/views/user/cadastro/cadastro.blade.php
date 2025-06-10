@@ -25,7 +25,7 @@
             </div>
 
             <div>
-                <input type="password" name="senha" placeholder="senha" required>
+                <input type="password" name="password" placeholder="senha" required>
                 @error('senha')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

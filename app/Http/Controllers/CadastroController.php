@@ -11,12 +11,11 @@ class CadastroController extends Controller
         return view('user/cadastro/cadastro');
     }
 
-
     public function salvar(Request $request){
         $nome = $request->input('nome');
         $sobrenome = $request->input('sobrenome');
         $email = $request->input('email');
-        $senha = $request->input('senha');
+        $senha = $request->input('password');
         $senhaConfirmada = $request->input('senha_confirmada');
         $cpf = $request->input('cpf');
         $telefone = $request->input('telefone');
@@ -29,7 +28,7 @@ class CadastroController extends Controller
         User::create([
             'name'            => ($nome . " " . $sobrenome),
             'email'           => $email,
-            'senha'        => $senha, 
+            'password'        => bcrypt($senha), 
             'cpf'             => $cpf,
             'telefone'        => $telefone,
             'dataNascimento' => $dataNascimento

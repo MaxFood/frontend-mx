@@ -31,19 +31,17 @@ cd max-food
 composer install
 ```
 
-
-Rode as migrations para criar as tabelas no banco de dados:
-
-```bash
-php artisan migrate
-```
-
-
 Configure o ambiente:
 
 ```bash
 cp .env.example .env
 php artisan key:generate
+```
+
+Rode as migrations para criar as tabelas no banco de dados:
+
+```bash
+php artisan migrate
 ```
 
 Rode o servidor:
