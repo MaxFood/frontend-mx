@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginLojaController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LojaCadastroController;
 use App\Http\Controllers\CartController;
@@ -38,6 +39,15 @@ Route::get('/cart', [CartController::class, 'cart']);
 
 
 
-//----Lojas----
+//----Rota Cadastro da Loja----
 
-Route::get('/loja/cadastro', [LojaCadastroController::class, 'cadastroForm']);
+Route::get('/loja/cadastro/cadastroloja', [LojaCadastroController::class, 'cadastroForm']);
+
+Route::post('/loja/cadastro/cadastroloja', [LojaCadastroController::class, 'salvar'])->name('cadastroloja.salvar');
+
+
+//----Rota Login da Loja----
+
+Route::get('/loja/login/loginloja', [LoginLojaController::class, 'loginlojaForm']);
+
+Route::post('/loja/login/loginloja', [LoginLojaController::class, 'login'])->name('loginloja.entrar');
