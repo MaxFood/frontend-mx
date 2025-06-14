@@ -41,13 +41,13 @@ Route::get('/cart', [CartController::class, 'cart']);
 
 //----Rota Cadastro da Loja----
 
-Route::get('/loja/cadastro/cadastroloja', [LojaCadastroController::class, 'cadastroForm']);
+Route::get('/loja/cadastro', [LojaCadastroController::class, 'cadastroForm']);
 
-Route::post('/loja/cadastro/cadastroloja', [LojaCadastroController::class, 'salvar'])->name('cadastroloja.salvar');
+Route::post('/loja/cadastro', [LojaCadastroController::class, 'salvar'])->name('cadastroloja.salvar');
 
 
 //----Rota Login da Loja----
 
-Route::get('/loja/login/loginloja', [LoginLojaController::class, 'loginlojaForm']);
+Route::get('/loja/login', [LoginLojaController::class, 'loginlojaForm']);
 
-Route::post('/loja/login/loginloja', [LoginLojaController::class, 'login'])->name('loginloja.entrar');
+Route::post('/loja/login', [LoginLojaController::class, 'login'])->name('loginloja.entrar');

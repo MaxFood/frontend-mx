@@ -8,7 +8,7 @@ class LoginLojaController extends Controller
 {
     public function loginlojaForm()
     {
-        return view('/loja/login/loginloja');      
+        return view('loja/login/loginloja');      
     }
     public function login(Request $request) {
         $credentials = $request->validate([
